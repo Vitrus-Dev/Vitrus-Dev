@@ -1,44 +1,45 @@
-<div align="center">
-  <h1>Vitrus</h1>
-  <p><b>Analytics for the AI agent era.</b></p>
-  <p>Cookie-free web analytics where every number carries the query that produced it.</p>
-  <p>
-    <a href="https://vitrus.dev">vitrus.dev</a> ·
-    <a href="https://vitrus.dev/docs">Docs</a> ·
-    <a href="https://github.com/Vitrus-Dev/vitrus">Source</a>
-  </p>
-</div>
+<p align="center">
+  <a href="https://vitrus.dev"><img src="https://raw.githubusercontent.com/Vitrus-Dev/vitrus/main/.github/assets/banner.png" alt="Vitrus — web analytics you can check" width="100%"></a>
+</p>
+
+<p align="center">
+  <a href="https://vitrus.dev/demo"><b>Live demo</b></a> ·
+  <a href="https://vitrus.dev">Website</a> ·
+  <a href="https://vitrus.dev/docs">Docs</a> ·
+  <a href="https://vitrus.dev/docs/mcp">Use with ChatGPT / Claude</a> ·
+  <a href="https://github.com/Vitrus-Dev/vitrus">Source</a>
+</p>
 
 ---
 
-Two things broke in web analytics at the same time.
+**Don't trust the dashboard. Check it.**
 
-**Measurement broke.** AI assistants send real visitors, and most analytics tools file roughly 70% of
-them as "direct" because those assistants attach no campaign tag. Meanwhile AI crawlers read your
-pages every day, and most tools either discard that or count it as people.
+Vitrus is cookie-free web analytics where every number opens the query that produced it — the SQL, its
+parameters, the window and the rows. The weekly AI summary is checked against that same evidence: a
+sentence whose number isn't in it is dropped before you read it.
 
-**Trust broke.** Analytics products now write summaries. A sentence like *"conversion fell 12% because
-of the theme release"* makes two claims you cannot check: a number the model may have computed itself,
-and a cause it cannot possibly know.
+- **AI traffic, told apart** — people that ChatGPT, Claude or Perplexity send you; crawlers that only read
+  your pages; agents that sign their requests (Web Bot Auth). Never added together.
+- **Ask your AI** — connect ChatGPT, Claude, Cursor or Claude Code over MCP (OAuth, read-only, 15 tools).
+  Every answer carries its query, so the assistant cites instead of guessing. Listed in the official MCP
+  Registry as `dev.vitrus/analytics`.
+- **Everything else you expect** — real-time, a 3D globe, sessions, funnels, journeys, goals, revenue,
+  retention, Web Vitals, errors, opt-in masked replay, Search Console.
+- **No cookies, no consent banner.** A 2.6 KB script. Do Not Track honoured.
 
-### What we build
+### Open source
 
-**[vitrus](https://github.com/Vitrus-Dev/vitrus)** — the open-source core. Apache-2.0, zero runtime
-dependencies, an embedded database, and a 2.4 KB tracker.
-
-- Every metric travels as `{ id, sql, params, window, value }`. Click a number, read the query that produced it.
-- Numbers are computed by deterministic SQL. The optional AI layer may rephrase them and may not invent them — a numeric guard drops any sentence it cannot support.
-- AI referrals and AI crawlers are separate channels, never summed.
-- No cookies, no stored identifier, no consent banner. Do Not Track is honoured by default.
-
-Deliberately absent: session replay and ad-platform attribution.
-
-### Getting started
+**[vitrus](https://github.com/Vitrus-Dev/vitrus)** — Apache-2.0, zero runtime dependencies, one process and
+one SQLite file. Self-host it for free:
 
 ```bash
-bun install -g @vitrus/cli
-vitrus init && vitrus site add "My site" example.com && vitrus start
+git clone https://github.com/Vitrus-Dev/vitrus && cd vitrus
+bun install && bun run build:tracker
+alias vitrus="bun $PWD/packages/cli/src/cli.ts"
+vitrus init && vitrus site add "My site" example.com
+VITRUS_PASSWORD="a long secret" vitrus start
 ```
 
-Or use the hosted version at **[app.vitrus.dev](https://app.vitrus.dev)** — the same engine, with no
-feature held back from the open source build.
+Or use the hosted version at **[app.vitrus.dev](https://app.vitrus.dev)** — free plan, paid plans from $12/month.
+The self-hosted dashboard is simpler than the hosted one today; the queries behind every view are in the
+open-source core.
