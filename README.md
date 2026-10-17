@@ -18,14 +18,17 @@ Vitrus is cookie-free web analytics where every number opens the query that prod
 parameters, the window and the rows. The weekly AI summary is checked against that same evidence: a
 sentence whose number isn't in it is dropped before you read it.
 
+- **Every app you ship, one panel** — add `vitrus.identify(user.id)` and see who is new, who came back, who
+  you lost and who started paying, for all your apps side by side. Counted, never listed: the id is hashed
+  in the browser before it is sent, and separately per app.
 - **AI traffic, told apart** — people that ChatGPT, Claude or Perplexity send you; crawlers that only read
   your pages; agents that sign their requests (Web Bot Auth). Never added together.
-- **Ask your AI** — connect ChatGPT, Claude, Cursor or Claude Code over MCP (OAuth, read-only, 15 tools).
+- **Ask your AI** — connect ChatGPT, Claude, Cursor or Claude Code over MCP (OAuth, read-only, 17 tools).
   Every answer carries its query, so the assistant cites instead of guessing. Listed in the official MCP
   Registry as `dev.vitrus/analytics`.
 - **Everything else you expect** — real-time, a 3D globe, sessions, funnels, journeys, goals, revenue,
   retention, Web Vitals, errors, opt-in masked replay, Search Console.
-- **No cookies, no consent banner.** A 2.6 KB script. Do Not Track honoured.
+- **No cookies, no consent banner.** A 3.0 KB script. Do Not Track honoured.
 
 ### Open source
 
