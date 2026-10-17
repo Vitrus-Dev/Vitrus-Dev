@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://vitrus.dev"><img src="https://raw.githubusercontent.com/Vitrus-Dev/vitrus/main/.github/assets/banner.png" alt="Vitrus — web analytics you can check" width="100%"></a>
+  <a href="https://vitrus.dev"><img src="https://raw.githubusercontent.com/Vitrus-Dev/vitrus/main/.github/assets/banner.png" alt="Vitrus — open-source analytics for every app you ship. One panel you can check." width="100%"></a>
 </p>
 
 <p align="center">
@@ -12,9 +12,9 @@
 
 ---
 
-**Don't trust the dashboard. Check it.**
+**Open-source analytics for every app you ship. One panel you can check.**
 
-Vitrus is cookie-free web analytics where every number opens the query that produced it — the SQL, its
+Vitrus is cookie-free web and product analytics for websites, iOS and Android apps where every number opens the query that produced it — the SQL, its
 parameters, the window and the rows. The weekly AI summary is checked against that same evidence: a
 sentence whose number isn't in it is dropped before you read it.
 
