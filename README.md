@@ -38,9 +38,7 @@ sentence whose number isn't in it is dropped before you read it.
 one SQLite file. Self-host it for free:
 
 ```bash
-git clone https://github.com/Vitrus-Dev/vitrus && cd vitrus
-bun install && bun run build:tracker
-alias vitrus="bun $PWD/packages/cli/src/cli.ts"
+bun install -g @vitrus-dev/cli
 vitrus init && vitrus site add "My site" example.com
 VITRUS_PASSWORD="a long secret" vitrus start
 ```
